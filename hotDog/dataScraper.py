@@ -16,11 +16,11 @@ import os
 
 #Cat Image URLs
 catUrlOfUrls = "http://image-net.org/api/text/imagenet.synset.geturls?wnid=n02121808"
-catImagesDestination = "/media/hydroguy45/ML Data/hotDog/cat/"
+catImagesDestination = "/home/hydroguy45/Desktop/trainingData/cat/"
 
 #Hot Dog Image URLs
 hotDogUrlOfUrls = "http://www.image-net.org/api/text/imagenet.synset.geturls?wnid=n07697537"
-hotDogImagesDestination = "/media/hydroguy45/ML Data/hotDog/dog/"
+hotDogImagesDestination = "/home/hydroguy45/Desktop/trainingData/dog/"
 
 def recoverImages (urlOfUrls, imageDestination):
 	i = 0
