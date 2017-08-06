@@ -1,10 +1,10 @@
 #Virtual env files
-hotDog/bin/*
-hotDog/include/*
-hotDog/lib/*
-hotDog/local/*
-hotDog/share/*
-hotDog/pip-selfcheck.json/*
+bin/
+include/
+lib/
+local/
+share/
+pip-selfcheck.json
 
 # Windows image file caches
 Thumbs.db
