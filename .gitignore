@@ -1,9 +1,9 @@
 #Virtual env files
-hotDog/bin/
-hotDog/include/
-hotDog/lib/
-hotDog/local/
-hotDog/share/
+bin/
+include/
+lib/
+local/
+share/
 pip-selfcheck.json
 
 # Windows image file caches
