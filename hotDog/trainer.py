@@ -68,6 +68,6 @@ if __name__ == "__main__":
         #Model
         model = tflearn.DNN(neuralNet, tensorboard_verbose=2)
         model.fit(X, Y, n_epoch=25, snapshot_epoch=False, show_metric=True, validation_set=(testX, testY))
-        model.save("RBG Model")
+        model.save("myModel.tflearn")
 
         #56.3 would be just guessing cat always... so anything above that is good

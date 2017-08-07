@@ -1,2 +1,2 @@
-model_checkpoint_path: "/home/hydroguy45/Desktop/hot_dog/hotDog/RBG Model"
-all_model_checkpoint_paths: "/home/hydroguy45/Desktop/hot_dog/hotDog/RBG Model"
+model_checkpoint_path: "/home/hydroguy45/Desktop/hot_dog/hotDog/myModel.tflearn"
+all_model_checkpoint_paths: "/home/hydroguy45/Desktop/hot_dog/hotDog/myModel.tflearn"
