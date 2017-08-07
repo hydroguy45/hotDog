@@ -32,7 +32,7 @@ if __name__ == "__main__":
             Y.append([0,1])
     #Shuffle
     X, Y = shuffle(X, Y)
-    X = numpy.array(X).reshape([-1,40,40,1])
+    X = numpy.array(X).reshape([-1,40,40,3])
     Y = numpy.array(Y)
     X, testX, Y, testY = train_test_split(X, Y, test_size=0.10, random_state=42)
     """#Test Data
@@ -45,7 +45,7 @@ if __name__ == "__main__":
     #Neural Net Time
     with tf.Graph().as_default():
         #Input
-        neuralNet = input_data(shape=[None, 40, 40, 1])
+        neuralNet = input_data(shape=[None, 40, 40, 3])
         #Convo
         neuralNet = conv_2d(neuralNet, 40, 3, activation='relu6', regularizer="L2")
         neuralNet = max_pool_2d(neuralNet, 2)
@@ -67,7 +67,7 @@ if __name__ == "__main__":
         neuralNet = regression(neuralNet, optimizer='adam', learning_rate=0.001, loss='categorical_crossentropy', name='target')
         #Model
         model = tflearn.DNN(neuralNet, tensorboard_verbose=2)
-        model.fit(X, Y, n_epoch=100, validation_set=(testX, testY), snapshot_epoch=False, show_metric=True)
-        model.save("Current_Model(>54.8%)")
+        model.fit(X, Y, n_epoch=25, snapshot_epoch=False, show_metric=True, validation_set=(testX, testY))
+        model.save("RBG Model")
 
         #56.3 would be just guessing cat always... so anything above that is good

@@ -24,7 +24,7 @@ hotDogImagesDestination = "/home/hydroguy45/Desktop/trainingData/dog/"
 
 def recoverImages (urlOfUrls, imageDestination):
 	i = 0
-	with Image.open(request.urlopen("https://s.yimg.com/pw/images/en-us/photo_unavailable.png")).resize((40,40), Image.ANTIALIAS).convert("L") as photoNoLongerAvailable:
+	with Image.open(request.urlopen("https://s.yimg.com/pw/images/en-us/photo_unavailable.png")).resize((40,40), Image.ANTIALIAS).convert("RGB") as photoNoLongerAvailable:
 		with request.urlopen(urlOfUrls) as r:
 			lines = r.read().splitlines()
 			for line in lines:
@@ -34,11 +34,13 @@ def recoverImages (urlOfUrls, imageDestination):
 						print("{}%".format(i/len(lines)))
 					try:
 						imageString = request.urlretrieve(url, imageDestination + "{}.jpg".format(i))
+						print(url)
 						try:
+							#running into an exception here
 							with open(imageDestination + "{}.jpg".format(i), "r+b") as f:
 								with Image.open(f) as image:
 									os.remove(imageDestination + "{}.jpg".format(i))
-									final = image.resize((40,40), Image.ANTIALIAS).convert("L")
+									final = image.resize((40,40), Image.ANTIALIAS).convert("RGB")
 									final.save(imageDestination + "{}.jpg".format(i))
 									if ImageChops.difference(final, photoNoLongerAvailable).getbbox() is None:
 										os.remove(imageDestination + "{}.jpg".format(i))
